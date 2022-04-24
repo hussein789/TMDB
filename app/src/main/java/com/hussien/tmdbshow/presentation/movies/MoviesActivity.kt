@@ -3,6 +3,8 @@ package com.hussien.tmdbshow.presentation.movies
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -30,15 +32,28 @@ class MoviesActivity : AppCompatActivity() {
         observeViewModel()
     }
 
-    private fun observeViewModel() {
-        viewModel.getMovies().observe(this){ movies ->
-            movies?.let { updateMoviesList(it) }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val actionId = item.itemId
+        return when(actionId){
+            R.id.refresh_action ->{
+                viewModel.updateMovies()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        viewModel.updateMovies().observe(this){ movies ->
+    }
+
+    private fun observeViewModel() {
+        viewModel.moviesState.observe(this){ movies ->
             movies?.let { updateMoviesList(it) }
         }
 
-        viewModel.loading.observe(this){ loading ->
+        viewModel.loadingState.observe(this){ loading ->
             loading?.let { handleLoading(it) }
         }
     }
