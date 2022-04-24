@@ -49,6 +49,5 @@ class MoviesViewModel (
                 _loadingState.value = false
             }
         }
-
     }
 }
