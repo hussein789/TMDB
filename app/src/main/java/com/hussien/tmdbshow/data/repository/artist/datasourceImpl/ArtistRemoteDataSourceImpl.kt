@@ -5,7 +5,7 @@ import com.hussien.tmdbshow.data.model.artist.Artist
 import com.hussien.tmdbshow.data.repository.artist.datasource.ArtistRemoteDataSource
 import javax.inject.Inject
 
-class ArtistRemoteDataSourceImpl @Inject constructor(
+class ArtistRemoteDataSourceImpl (
     private val tmdbService: TMDBService,
     private val apiKey:String
 ) : ArtistRemoteDataSource {

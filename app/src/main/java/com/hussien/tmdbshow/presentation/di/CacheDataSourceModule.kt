@@ -17,19 +17,16 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class CacheDataSourceModule {
 
-    @Singleton
     @Provides
     fun providesMoviesCacheDataSource():MovieCacheDataSource{
         return MovieCacheDataSourceImpl()
     }
 
-    @Singleton
     @Provides
     fun providesArtistsCacheDataSource():ArtistCacheDataSource{
         return ArtistCacheDataSourceImpl()
     }
 
-    @Singleton
     @Provides
     fun providesTvShowsCacheDataSource():TvShowCacheDataSource{
         return TvShowCacheDataSourceImpl()

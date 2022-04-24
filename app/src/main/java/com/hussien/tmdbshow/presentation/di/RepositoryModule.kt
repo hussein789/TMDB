@@ -26,7 +26,6 @@ import javax.inject.Singleton
 class RepositoryModule {
 
     @Provides
-    @Singleton
     fun providesMoviesRepository(
         movieRemoteDataSource: MovieRemoteDataSource,
         movieLocalDataSource: MovieLocalDataSource,
@@ -40,7 +39,6 @@ class RepositoryModule {
     }
 
     @Provides
-    @Singleton
     fun providesArtistRepository(
         artistRemoteDataSource: ArtistRemoteDataSource,
         artistLocalDataSource: ArtistLocalDataSource,
@@ -54,7 +52,6 @@ class RepositoryModule {
     }
 
     @Provides
-    @Singleton
     fun providesTvShowsRepository(
         tvShowRemoteDataSource: TvShowRemoteDataSource,
         tvShowLocalDataSource: TvShowLocalDataSource,

@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class ArtistLocalDataSourceImpl @Inject constructor(
+class ArtistLocalDataSourceImpl (
     private val artistDao: ArtistDao
 ): ArtistLocalDataSource {
     override suspend fun getArtistFromDB(): List<Artist> {

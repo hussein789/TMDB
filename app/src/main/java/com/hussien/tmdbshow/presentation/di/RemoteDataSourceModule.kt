@@ -7,6 +7,8 @@ import com.hussien.tmdbshow.data.repository.artist.datasourceImpl.ArtistRemoteDa
 import com.hussien.tmdbshow.data.repository.movie.datasource.MovieRemoteDataSource
 import com.hussien.tmdbshow.data.repository.movie.datasourceImpl.MovieCacheDataSourceImpl
 import com.hussien.tmdbshow.data.repository.movie.datasourceImpl.MovieRemoteDataSourceImpl
+import com.hussien.tmdbshow.data.repository.tvshow.datasource.TvShowRemoteDataSource
+import com.hussien.tmdbshow.data.repository.tvshow.datasourceImpl.TvShowRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,20 +20,17 @@ import javax.inject.Singleton
 class RemoteDataSourceModule() {
 
     @Provides
-    @Singleton
     fun providesMoviesRemoteDataSource(tmdbService: TMDBService):MovieRemoteDataSource{
         return MovieRemoteDataSourceImpl(tmdbService,BuildConfig.API_KEY)
     }
 
     @Provides
-    @Singleton
     fun providesArtistsRemoteDataSource(tmdbService: TMDBService):ArtistRemoteDataSource{
         return ArtistRemoteDataSourceImpl(tmdbService,BuildConfig.API_KEY)
     }
 
     @Provides
-    @Singleton
-    fun providesTvShowsRemoteDataSource(tmdbService: TMDBService):ArtistRemoteDataSource{
-        return ArtistRemoteDataSourceImpl(tmdbService,BuildConfig.API_KEY)
+    fun providesTvShowsRemoteDataSource(tmdbService: TMDBService):TvShowRemoteDataSource{
+        return TvShowRemoteDataSourceImpl(tmdbService,BuildConfig.API_KEY)
     }
 }

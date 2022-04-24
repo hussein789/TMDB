@@ -20,19 +20,16 @@ import javax.inject.Singleton
 class LocalDataSourceModule {
 
     @Provides
-    @Singleton
     fun providesMovieLocalDataSource(movieDao: MovieDao):MovieLocalDataSource{
         return MovieLocalDataSourceImpl(movieDao)
     }
 
     @Provides
-    @Singleton
     fun providesArtistsLocalDataSource(artistDao: ArtistDao):ArtistLocalDataSource{
         return ArtistLocalDataSourceImpl(artistDao)
     }
 
     @Provides
-    @Singleton
     fun providesTvShowsLocalDataSource(tvShowDao: TvShowDao):TvShowLocalDataSource{
         return TvShowLocalDataSourceImpl(tvShowDao)
     }
