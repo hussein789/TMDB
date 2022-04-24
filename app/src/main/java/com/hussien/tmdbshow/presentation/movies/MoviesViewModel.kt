@@ -16,11 +16,10 @@ class MoviesViewModel (
 
     private val _moviesState = MutableLiveData<List<Movie>>()
     val moviesState:LiveData<List<Movie>> get() = _moviesState
+
     init {
         getMovies()
     }
-
-
 
     fun getMovies(){
         viewModelScope.launch {
