@@ -1,4 +1,4 @@
-package com
+package com.utils
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.vezeeta.patients.app.utils.MainCoroutineScopeRule

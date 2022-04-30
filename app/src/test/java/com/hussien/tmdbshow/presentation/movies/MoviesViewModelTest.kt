@@ -1,6 +1,6 @@
 package com.hussien.tmdbshow.presentation.movies
 
-import com.BaseUnitTest
+import com.utils.BaseUnitTest
 import com.google.common.truth.Truth.assertThat
 import com.hussien.tmdbshow.data.model.movie.Movie
 import com.hussien.tmdbshow.domain.usecase.GetMoviesUseCase
